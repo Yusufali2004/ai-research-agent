@@ -1,0 +1,94 @@
+.header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(5, 8, 16, 0.85);
+  backdrop-filter: blur(14px);
+  z-index: 10;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.dotConnected {
+  background: var(--accent);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.badgeModel {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.badgeLive {
+  border-color: var(--accent3);
+  color: var(--accent3);
+}
+
+.badgeOff {
+  color: var(--muted);
+}
+
+.connectBtn {
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text2);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  transition: all var(--transition);
+}
+
+.connectBtn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.connectBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.connectedBtn {
+  border-color: var(--danger) !important;
+  color: var(--danger) !important;
+}
+
+.connectedBtn:hover {
+  background: rgba(255, 79, 110, 0.08) !important;
+}

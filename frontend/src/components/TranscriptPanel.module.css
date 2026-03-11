@@ -1,0 +1,44 @@
+.panel {
+  width: 100%;
+  max-width: 540px;
+  min-height: 68px;
+  padding: 16px 20px;
+  background: rgba(13, 17, 32, 0.55);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s, box-shadow 0.3s, opacity 0.4s;
+  opacity: 0.45;
+}
+
+.visible {
+  border-color: var(--border2);
+  box-shadow: 0 0 20px var(--glow);
+  opacity: 1;
+}
+
+.roleTag {
+  display: block;
+  font-size: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.roleTag.user  { color: var(--accent); }
+.roleTag.agent { color: var(--accent2); }
+
+.text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.placeholder {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 2.4;
+}
