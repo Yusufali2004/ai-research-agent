@@ -45,19 +45,19 @@ export type WsOutgoingType = 'audio' | 'text' | 'end_turn';
 
 export interface WsOutgoing {
   type: WsOutgoingType;
-  data?: string;   // base64 audio
-  text?: string;   // text fallback
+  data?: string;
+  text?: string;
 }
 
-// Tool name → step number mapping
+// Tool name → step number (matches INITIAL_STEPS ids below)
 export const TOOL_STEP_MAP: Record<string, number> = {
   plan_research_subtopics:    1,
   google_search:              2,
   format_research_summary:    3,
-  suggest_followup_questions: 5,
+  suggest_followup_questions: 4,
 };
 
-// Tool name → human readable label
+// Tool name → human readable label shown in UI
 export const TOOL_LABEL_MAP: Record<string, string> = {
   plan_research_subtopics:    '🧠 Planning research structure...',
   google_search:              '🌐 Searching the web...',
@@ -66,9 +66,8 @@ export const TOOL_LABEL_MAP: Record<string, string> = {
 };
 
 export const INITIAL_STEPS: AgentStep[] = [
-  { id: 1, label: 'Plan research subtopics',  status: 'pending' },
-  { id: 2, label: 'Search web sources',       status: 'pending' },
-  { id: 3, label: 'Synthesize findings',      status: 'pending' },
-  { id: 4, label: 'Find papers & resources',  status: 'pending' },
-  { id: 5, label: 'Generate project ideas',   status: 'pending' },
+  { id: 1, label: 'Plan research subtopics',     status: 'pending' },
+  { id: 2, label: 'Search web sources',          status: 'pending' },
+  { id: 3, label: 'Synthesize findings',         status: 'pending' },
+  { id: 4, label: 'Generate follow-up ideas',    status: 'pending' },
 ];
