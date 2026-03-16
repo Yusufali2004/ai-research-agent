@@ -62,7 +62,7 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
     # FIX: use the Modality enum, not a plain string
     run_config = RunConfig(
         streaming_mode=StreamingMode.BIDI,
-        response_modalities=[types.Modality.AUDIO],
+        response_modalities=["AUDIO"],
         speech_config=types.SpeechConfig(
             voice_config=types.VoiceConfig(
                 prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name="Aoede")
