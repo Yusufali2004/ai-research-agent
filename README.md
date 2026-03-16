@@ -154,6 +154,9 @@ ai-research-agent/
 ---
 
 ## 👤 Author
+Md Yusuf Ali 
+
+
 
 Built for the **Gemini Live Agent Challenge** — Google × Devpost, 2026.  
 `#GeminiLiveAgentChallenge`
