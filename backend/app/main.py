@@ -59,14 +59,11 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
     )
     live_request_queue = LiveRequestQueue()
 
-    # response_modalities accepts list[str] per actual RunConfig source
     run_config = RunConfig(
         streaming_mode=StreamingMode.BIDI,
         response_modalities=["AUDIO"],
-<<<<<<< HEAD
-=======
-        support_cfc=True,
->>>>>>> 7fb98f8e2e8a820ac14c660b055fb48b24730a16
+        output_audio_transcription=None,
+        input_audio_transcription=None,
         speech_config=types.SpeechConfig(
             voice_config=types.VoiceConfig(
                 prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name="Aoede")
@@ -84,7 +81,6 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
                 live_request_queue=live_request_queue,
                 run_config=run_config,
             ):
-                # Audio and text parts
                 if event.content and event.content.parts:
                     for part in event.content.parts:
                         if hasattr(part, "inline_data") and part.inline_data:
@@ -100,7 +96,6 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
                                 "text": part.text,
                             })
 
-                # Tool call started — pause mic audio
                 if event.get_function_calls():
                     tool_active.set()
                     for fn in event.get_function_calls():
@@ -111,7 +106,6 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
                             "status": "calling",
                         })
 
-                # Tool finished — resume mic audio
                 if event.get_function_responses():
                     tool_active.clear()
                     await websocket.send_json({
@@ -120,7 +114,6 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
                         "status": "done",
                     })
 
-                # Turn complete — always resume
                 if hasattr(event, "turn_complete") and event.turn_complete:
                     tool_active.clear()
                     await websocket.send_json({"type": "turn_complete"})
@@ -139,7 +132,6 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
                 msg = json.loads(raw)
 
                 if msg["type"] == "audio":
-                    # Drop audio while tool is running to avoid 1008
                     if tool_active.is_set():
                         continue
                     live_request_queue.send_realtime(
