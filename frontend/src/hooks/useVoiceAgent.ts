@@ -12,7 +12,7 @@ import {
 import { useAudioPlayer } from './useAudioPlayer';
 
 // ── Config ────────────────────────────────────────────────────────
-const WS_BASE_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8080';
+const WS_BASE_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8000';
 const SESSION_ID  = `session_` + Date.now();
 const SAMPLE_RATE = 16000;
 const BUFFER_SIZE = 4096;
@@ -141,7 +141,7 @@ export function useVoiceAgent() {
 
     ws.onerror = (e) => {
       console.error('WebSocket error:', e);
-      setErrorMsg('Cannot reach backend. Make sure Python server is running on port 8080.');
+      setErrorMsg('Cannot reach backend. Make sure Python server is running on port 8000.');
       setIsConnecting(false);
       setIsConnected(false);
     };
