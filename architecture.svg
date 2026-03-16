@@ -1,0 +1,71 @@
+<svg width="680" height="520" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="680" height="520" fill="#ffffff"/>
+
+  <!-- User -->
+  <rect x="40" y="220" width="100" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="90" y="244" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#085041" dominant-baseline="central">User</text>
+  <text x="90" y="262" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F6E56" dominant-baseline="central">Voice / mic</text>
+
+  <!-- Frontend -->
+  <rect x="190" y="180" width="140" height="136" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="260" y="205" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#26215C" dominant-baseline="central">Frontend</text>
+  <text x="260" y="224" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#534AB7" dominant-baseline="central">React + TypeScript</text>
+  <rect x="204" y="236" width="112" height="28" rx="6" fill="none" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="260" y="254" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#3C3489" dominant-baseline="central">Voice Orb UI</text>
+  <rect x="204" y="272" width="112" height="28" rx="6" fill="none" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="260" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#3C3489" dominant-baseline="central">Agent Workflow</text>
+
+  <!-- Backend -->
+  <rect x="390" y="140" width="150" height="216" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="465" y="166" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#042C53" dominant-baseline="central">Backend</text>
+  <text x="465" y="184" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#185FA5" dominant-baseline="central">FastAPI + ADK</text>
+  <rect x="404" y="196" width="122" height="28" rx="6" fill="none" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="465" y="214" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0C447C" dominant-baseline="central">WebSocket server</text>
+  <rect x="404" y="232" width="122" height="28" rx="6" fill="none" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="465" y="250" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0C447C" dominant-baseline="central">ADK Runner</text>
+  <rect x="404" y="268" width="122" height="28" rx="6" fill="none" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="465" y="286" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0C447C" dominant-baseline="central">Tool executor</text>
+  <rect x="404" y="304" width="122" height="28" rx="6" fill="none" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="465" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0C447C" dominant-baseline="central">Session manager</text>
+
+  <!-- Gemini -->
+  <rect x="390" y="30" width="150" height="76" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="465" y="58" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#412402" dominant-baseline="central">Gemini Live API</text>
+  <text x="465" y="78" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#854F0B" dominant-baseline="central">gemini-2.0-flash-live</text>
+
+  <!-- Tools -->
+  <rect x="578" y="310" width="90" height="122" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="623" y="333" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#4A1B0C" dominant-baseline="central">Tools</text>
+  <text x="623" y="353" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#993C1D" dominant-baseline="central">plan_topics</text>
+  <text x="623" y="370" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#993C1D" dominant-baseline="central">google_search</text>
+  <text x="623" y="387" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#993C1D" dominant-baseline="central">format_summary</text>
+  <text x="623" y="404" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#993C1D" dominant-baseline="central">suggest_followup</text>
+
+  <!-- Arrow: User <-> Frontend -->
+  <line x1="140" y1="244" x2="188" y2="244" stroke="#0F6E56" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="188" y1="258" x2="140" y2="258" stroke="#0F6E56" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="164" y="238" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888780">audio</text>
+
+  <!-- Arrow: Frontend <-> Backend -->
+  <line x1="330" y1="236" x2="388" y2="236" stroke="#534AB7" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="388" y1="252" x2="330" y2="252" stroke="#534AB7" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="359" y="228" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888780">WebSocket</text>
+
+  <!-- Arrow: Backend <-> Gemini -->
+  <line x1="460" y1="140" x2="460" y2="108" stroke="#185FA5" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="472" y1="108" x2="472" y2="140" stroke="#185FA5" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="510" y="126" text-anchor="start" font-family="sans-serif" font-size="11" fill="#888780">Live API</text>
+
+  <!-- Arrow: Backend -> Tools -->
+  <line x1="540" y1="318" x2="577" y2="340" stroke="#993C1D" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="577" y1="358" x2="540" y2="344" stroke="#993C1D" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="562" y="308" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888780">tool calls</text>
+
+  <!-- Footer -->
+  <text x="340" y="490" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888780">ResearchAI — Gemini Live API + Google ADK · #GeminiLiveAgentChallenge</text>
+</svg>
