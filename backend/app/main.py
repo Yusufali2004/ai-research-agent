@@ -59,10 +59,14 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
     )
     live_request_queue = LiveRequestQueue()
 
-    # FIX: use the Modality enum, not a plain string
+    # response_modalities accepts list[str] per actual RunConfig source
     run_config = RunConfig(
         streaming_mode=StreamingMode.BIDI,
         response_modalities=["AUDIO"],
+<<<<<<< HEAD
+=======
+        support_cfc=True,
+>>>>>>> 7fb98f8e2e8a820ac14c660b055fb48b24730a16
         speech_config=types.SpeechConfig(
             voice_config=types.VoiceConfig(
                 prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name="Aoede")

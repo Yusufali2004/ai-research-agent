@@ -13,7 +13,7 @@ import { useAudioPlayer } from './useAudioPlayer';
 
 // ── Config ────────────────────────────────────────────────────────
 const WS_BASE_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8080';
-const SESSION_ID  = `session_${Date.now()}`;
+const SESSION_ID  = `session_` + Date.now();
 const SAMPLE_RATE = 16000;
 const BUFFER_SIZE = 4096;
 
@@ -89,11 +89,15 @@ export function useVoiceAgent() {
         break;
 
       case 'tool_use':
-        if (msg.tool) {
+        if (msg.tool && msg.tool !== 'done') {
+          // A tool just started — activate its step
           const stepId = TOOL_STEP_MAP[msg.tool];
           if (stepId) activateStep(stepId);
           setActiveToolLabel(TOOL_LABEL_MAP[msg.tool] ?? `Using ${msg.tool}...`);
           addMessage('tool', `Tool called: ${msg.tool}`);
+        } else if (msg.tool === 'done' || msg.status === 'done') {
+          // Tool finished — clear the active label
+          setActiveToolLabel(null);
         }
         break;
 
